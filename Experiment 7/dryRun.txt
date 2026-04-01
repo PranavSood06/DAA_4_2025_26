@@ -1,0 +1,34 @@
+Dry Run:
+
+Input:
+n = 5
+flights = {0-1-100, 1-2-100, 0-2-500, 1-3-200, 3-2-50}
+src = 0, dst = 2, k = 2
+
+Start:
+Queue = {(0, 0, 0)}
+dist = [0, inf, inf, inf, inf]
+
+Step 1:
+From 0 → update:
+dist[1] = 100
+dist[2] = 500
+
+Step 2:
+From 1 → update:
+dist[2] = 200
+dist[3] = 300
+
+Step 3:
+From 2 → no change
+
+Step 4:
+From 2 → destination reached
+
+Step 5:
+From 3 → no better path
+
+Final:
+dist[2] = 200
+
+Answer = 200

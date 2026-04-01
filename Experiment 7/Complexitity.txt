@@ -1,0 +1,11 @@
+Time Complexity:
+O(K * E)
+
+K = number of stops
+E = number of flights
+
+Space Complexity:
+O(N + E)
+
+N = number of nodes
+E = number of edges

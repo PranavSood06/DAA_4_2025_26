@@ -1,0 +1,23 @@
+Algorithm:
+
+1. Build adjacency list from flights.
+
+2. Initialize queue storing:
+   (stops, node, cost)
+
+3. Initialize dist[] with infinity.
+   Set dist[src] = 0.
+
+4. Push (0, src, 0) into queue.
+
+5. While queue is not empty:
+   - Pop element
+   - If stops > k, continue
+
+   - For each neighbor:
+       If cost + price < dist[neighbor]:
+           Update dist[neighbor]
+           Push (stops + 1, neighbor, new cost)
+
+6. If dist[dst] == infinity return -1
+   Else return dist[dst]
