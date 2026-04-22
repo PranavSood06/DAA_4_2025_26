@@ -1,0 +1,21 @@
+Algorithm:
+
+1. Take input array arr of size n.
+2. Compute total sum of array elements → total.
+3. Create a DP table dp[n+1][total+1]:
+    dp[i][j] = true if a subset of first i elements has sum j.
+4. Initialize:
+    dp[0][0] = true (sum 0 is always possible with 0 elements).
+5. Fill the DP table:
+    For each element i = 1 to n
+        For each sum j = 0 to total
+            Exclude element → dp[i][j] = dp[i-1][j]
+            Include element if possible:
+                If j >= arr[i-1]
+                dp[i][j] = dp[i][j] OR dp[i-1][j - arr[i-1]]
+6. Find minimum difference:
+    Check all sums s from 0 to total/2
+    If dp[n][s] == true
+        Compute difference = total - 2*s
+        Take minimum
+7. Return the minimum difference.
