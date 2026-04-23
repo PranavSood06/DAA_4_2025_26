@@ -1,0 +1,73 @@
+Dry Run: numDistinct(s, t)
+
+Example:
+s = "babgbag"
+t = "bag"
+
+m = 7, n = 3
+
+We define dp[i][j] = number of ways to form t[j:] from s[i:]
+
+Step 1: Base Case Initialization
+
+For all i:
+dp[i][3] = 1
+(because empty string t can always be formed in 1 way)
+
+So:
+dp[7][3] = dp[6][3] = ... = dp[0][3] = 1
+
+Step 2: Fill DP Table (bottom-up)
+
+We compare characters from right to left.
+
+We only explain key transitions:
+
+i = 6 (s[6] = 'g')
+
+j = 2 (t[2] = 'g')
+Match found:
+
+dp[6][2] = dp[7][2] + dp[7][3]
+         = 0 + 1
+         = 1
+
+i = 5 (s[5] = 'a')
+
+No match with t[2] = 'g'
+dp[5][2] = dp[6][2] = 1
+
+i = 4 (s[4] = 'b')
+
+dp[4][2] = dp[5][2] = 1
+
+i = 3 (s[3] = 'g')
+
+Match with t[2] = 'g'
+dp[3][2] = dp[4][2] + dp[4][3]
+         = 1 + 1
+         = 2
+
+i = 2 (s[2] = 'b')
+
+dp[2][2] = dp[3][2] = 2
+
+i = 1 (s[1] = 'a')
+
+dp[1][2] = dp[2][2] = 2
+
+i = 0 (s[0] = 'b')
+
+j = 0 (t[0] = 'b')
+Match found:
+
+dp[0][0] = dp[1][0] + dp[1][1]
+
+(dp values computed similarly)
+
+Final result:
+dp[0][0] = 5
+
+Final Answer:
+
+Number of distinct subsequences = 5

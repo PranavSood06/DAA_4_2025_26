@@ -1,0 +1,31 @@
+Algorithm: Number of Distinct Subsequences
+
+Input: Strings s and t
+Output: Number of distinct subsequences of s equal to t
+
+Step 1: Let m be the length of string s
+        Let n be the length of string t
+
+Step 2: Create a 2D DP array of size (m+1) x (n+1)
+        Initialize all values to 0
+
+Step 3: Base Case Initialization
+        For every i from 0 to m:
+            dp[i][n] = 1
+        (An empty string t can always be formed from any suffix of s)
+
+Step 4: Fill DP table from bottom to top
+        For sIndex from m-1 down to 0:
+            For tIndex from n-1 down to 0:
+
+                Set dp[sIndex][tIndex] = dp[sIndex + 1][tIndex]
+                (Ignore current character of s)
+
+                If s[sIndex] == t[tIndex]:
+                    Add dp[sIndex + 1][tIndex + 1] to dp[sIndex][tIndex]
+                    (Take current character match into account)
+
+Step 5: Final Answer
+        Return dp[0][0]
+
+End

@@ -1,0 +1,23 @@
+Time Complexity (TC):
+
+O(m * n)
+
+Where:
+m = length of string s
+n = length of string t
+
+Explanation:
+We fill a DP table of size (m+1) x (n+1).
+Each cell dp[i][j] is computed in O(1) time.
+So total computations = m * n.
+
+
+
+Space Complexity (SC):
+
+O(m * n)
+
+Explanation:
+We use a 2D DP array of size (m+1) x (n+1)
+to store intermediate results.
+
