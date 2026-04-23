@@ -1,0 +1,44 @@
+
+1. BINARY SEARCH
+
+
+Time Complexity:
+- Best Case: O(1)
+- Average Case: O(log n)
+- Worst Case: O(log n)
+
+Space Complexity:
+- O(1) (iterative approach, no extra space)
+
+
+
+2A. SUBSET SUM VERIFICATION
+
+
+Time Complexity:
+- O(n) (traverses all elements once)
+
+Space Complexity:
+- O(1) (uses only a single variable for sum)
+
+
+
+2B. SUBSET SUM DECISION (RECURSIVE)
+
+
+Time Complexity:
+- O(2^n) (each element has two choices: include or exclude)
+
+Space Complexity:
+- O(n) (recursion stack depth)
+
+
+
+3. TRAVELLING SALESMAN PROBLEM (BRUTE FORCE)
+
+
+Time Complexity:
+- O(n!) (all permutations of cities are generated)
+
+Space Complexity:
+- O(n) (stores permutation and recursion/iteration overhead)

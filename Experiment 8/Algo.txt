@@ -1,0 +1,74 @@
+
+1. BINARY SEARCH
+
+
+Algorithm:
+1. Start
+2. Initialize left = 0, right = n - 1
+3. While left <= right:
+   a. mid = left + (right - left) / 2
+   b. If arr[mid] == target:
+        return mid
+   c. Else if arr[mid] < target:
+        left = mid + 1
+   d. Else:
+        right = mid - 1
+4. Return -1 (element not found)
+5. End
+
+
+
+2A. SUBSET SUM VERIFICATION
+
+
+Algorithm:
+1. Start
+2. Initialize sum = 0
+3. For each element x in subset:
+   a. sum = sum + x
+4. If sum == target:
+      return true
+   Else:
+      return false
+5. End
+
+
+
+2B. SUBSET SUM DECISION (RECURSIVE)
+
+
+Algorithm:
+Function subset(arr, n, target):
+1. If target == 0:
+      return true
+2. If n == 0:
+      return false
+3. Return:
+      subset(arr, n-1, target) OR
+      subset(arr, n-1, target - arr[n-1])
+
+Main Function:
+1. Call subset(arr, size, target)
+2. Return result
+
+
+
+3. TRAVELLING SALESMAN PROBLEM (BRUTE FORCE)
+
+
+Algorithm:
+1. Start
+2. Let n be number of cities
+3. Fix starting city as 0
+4. Create list of remaining cities (1 to n-1)
+5. Initialize minCost = infinity
+6. Generate all permutations of remaining cities:
+   For each permutation:
+      a. Set currentCost = 0
+      b. Start from city 0
+      c. Traverse all cities in permutation:
+            add distance to currentCost
+      d. Add cost to return to starting city
+      e. Update minCost = min(minCost, currentCost)
+7. Return minCost
+8. End
