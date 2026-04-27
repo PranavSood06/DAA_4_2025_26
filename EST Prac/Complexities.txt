@@ -1,0 +1,10 @@
+Bellman-Ford Algorithm
+
+Time Complexity (TC): O(V * E)
+Space Complexity (SC): O(V) or O(V + E)
+
+
+Travelling Salesman Problem (DP + Bitmask)
+
+Time Complexity (TC): O(n^2 * 2^n)
+Space Complexity (SC): O(n * 2^n)
